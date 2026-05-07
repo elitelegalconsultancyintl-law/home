@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Court Registries - Elite Legal Consultancy</title>
+<link rel="stylesheet" href="style.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+body{background:#fff;color:#0f172a;}
+
+.container{padding:20px;display:grid;grid-template-columns:260px 1fr 300px;gap:20px;}
+/* LEFT MENU */
+.menu{border-right:1px solid #e2e8f0;max-height:85vh;overflow-y:auto;padding-right:10px; position: sticky;top: 80px;}
+.menu h3{margin-bottom:10px;}
+.menu li{list-style:none;padding:10px;border-radius:6px;margin-bottom:6px;cursor:pointer;}
+.menu li:hover{background:#f1f5f9;}
+.menu li.active{background:#0f172a;color:#fff;}
+
+/* FORM */
+.form-section{padding:80px 20px;}
+.form-section h2{margin-bottom:10px;}
+.fee{color:#16a34a;margin-bottom:15px;font-weight:bold;}
+
+input,textarea,select{width:100%;padding:12px;margin-bottom:12px;border:1px solid #cbd5e1;border-radius:6px;}
+textarea{min-height:120px;}
+
+button{padding:12px 20px;background:#0f172a;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-right:10px;}
+
+/* RIGHT */
+.side{border-left:1px solid #e2e8f0;padding-left:15px; padding-top: 80px; display: flex;flex-direction: column;gap: 10px;}
+
+/* MOBILE */
+.mobile-select{display:none;margin-bottom:10px;}
+@media(max-width:900px){
+.container{grid-template-columns:1fr;}
+.menu{display:none;}
+.mobile-select{display:block;}
+.side{border:none;margin-top:20px;padding:0;}
+}
+</style>
+</head>
+<body>
+
+    <div class="overlay" id="overlay"></div>
+<header>
+    <div class="logo">
+        <img src="icons/elite_consultancy_logo.png" alt="" style="height:40px;">
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="case.html">Case Filing</a>
+        <a href="registries.html" class="btn">Legal Documentation</a>
+        <a href="contact.html">Contact</a>
+        <a href="consultation.html">Consultation</a>
+    </nav>
+
+    <div class="menu-btn" id="menuBtn">☰</div>    
+</header>
+
+    <div class="drawer" id="drawer">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="case.html">Case Filing</a>
+        <a href="registries.html" class="btn">Legal Documentation</a>
+        <a href="contact.html">Contact</a>
+        <a href="consultation.html">Consultation</a>        
+    </div>
+
+<div class="container">
+
+<!-- LEFT -->
+<div class="menu" id="menu">
+<h3 style="position: sticky;top: 0; padding-top: 20px; padding-bottom: 20px;background-color: white;border-bottom: solid gray 1px; margin-bottom: 20px;">Registry Services</h3>
+<ul>
+<li class="active" onclick="selectDoc('affidavit', this)">Affidavit</li>
+<li onclick="selectDoc('name', this)">Change of Name</li>
+<li onclick="selectDoc('age', this)">Age Declaration</li>
+<li onclick="selectDoc('stamp', this)">Court Stamp</li>
+<li onclick="selectDoc('agreement', this)">Agreement Drafting</li>
+<li onclick="selectDoc('contract', this)">Contracts</li>
+<li onclick="selectDoc('order', this)">Court Order</li>
+<li onclick="selectDoc('marriage', this)">Marriage Affidavit</li>
+<li onclick="selectDoc('loss', this)">Loss of Document</li>
+<li onclick="selectDoc('police', this)">Police Extract</li>
+<li onclick="selectDoc('business', this)">Business Registration</li>
+<li onclick="selectDoc('tenancy', this)">Tenancy Agreement</li>
+<li onclick="selectDoc('divorce', this)">Divorce Filing</li>
+<li onclick="selectDoc('custody', this)">Child Custody</li>
+<li onclick="selectDoc('power', this)">Power of Attorney</li>
+<li onclick="selectDoc('will', this)">Will Drafting</li>
+<li onclick="selectDoc('probate', this)">Probate</li>
+<li onclick="selectDoc('land', this)">Land Title</li>
+<li onclick="selectDoc('deed', this)">Deed of Assignment</li>
+<li onclick="selectDoc('partnership', this)">Partnership Agreement</li>
+<li onclick="selectDoc('nda', this)">NDA</li>
+<li onclick="selectDoc('loan', this)">Loan Agreement</li>
+<li onclick="selectDoc('employment', this)">Employment Contract</li>
+<li onclick="selectDoc('termination', this)">Termination Notice</li>
+<li onclick="selectDoc('immigration', this)">Immigration Docs</li>
+<li onclick="selectDoc('tax', this)">Tax Clearance</li>
+<li onclick="selectDoc('compliance', this)">Compliance Cert</li>
+<li onclick="selectDoc('notary', this)">Notary Service</li>
+<li onclick="selectDoc('certified', this)">Certified True Copy</li>
+<li onclick="selectDoc('appeal', this)">Appeal Filing</li>
+</ul>
+</div>
+
+<!-- CENTER -->
+<div class="form-section">
+<h2 id="docTitle">Affidavit</h2>
+<div class="fee" id="docFee">Legal Fee: $300</div>
+
+<select class="mobile-select" onchange="selectDoc(this.value)">
+<option value="affidavit">Affidavit</option>
+<option value="name">Change of Name</option>
+<option value="age">Age Declaration</option>
+<option value="stamp">Court Stamp</li>
+<option value="agreement">Agreement Drafting</li>
+<option value="contract">Contracts</li>
+<option value="order">Court Order</li>
+<option value="marriage">Marriage Affidavit</li>
+<option value="loss">Loss of Document</li>
+<option value="police">Police Extract</li>
+<option value="business">Business Registration</li>
+<option value="tenancy">Tenancy Agreement</li>
+<option value="divorce">Divorce Filing</li>
+<option value="custody">Child Custody</li>
+<option value="power">Power of Attorney</li>
+<option value="will">Will Drafting</li>
+<option value="probate">Probate</li>
+<option value="land">Land Title</li>
+<option value="deed">Deed of Assignment</li>
+<option value="partnership">Partnership Agreement</li>
+<option value="nda">NDA</li>
+<option value="loan">Loan Agreement</li>
+<option value="employment">Employment Contract</li>
+<option value="termination">Termination Notice</li>
+<option value="immigration">Immigration Docs</li>
+<option value="tax">Tax Clearance</li>
+<option value="compliance">Compliance Cert</li>
+<option value="notary">Notary Service</li>
+<option value="certified">Certified True Copy</li>
+<option value="appeal">Appeal Filing</li>
+</select>
+
+
+
+
+
+<div id="formFields"></div>
+<div style="margin-top:20px; margin-bottom:20px;">
+    <label style="display:block; margin-bottom:8px; font-weight:bold;">
+        Court Token
+    </label>
+
+    <input 
+        type="text" 
+        id="courtToken"
+        placeholder="Enter your court-issued token"
+        style="
+            width:100%;
+            padding:14px;
+            border:1px solid #cbd5e1;
+            border-radius:8px;
+            font-size:15px;
+        "
+    >
+
+    <small style="color:#64748b; display:block; margin-top:6px;">
+        A valid court token is required before document download and verification.
+    </small>
+</div>
+
+<div style="display:flex; gap:10px; flex-wrap:wrap;">
+
+    <button>
+        Submit Request
+    </button>
+
+    <button 
+        id="downloadBtn"
+        disabled
+        style="
+            background:#cbd5e1;
+            color:#64748b;
+            cursor:not-allowed;
+            opacity:0.7;
+        "
+    >
+        Download Document
+    </button>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="side">
+<h3>Instructions</h3>
+<p style="font-size:14px;color:#475569;">
+Select a registry service to generate the appropriate legal form. Fill in all required details accurately. Upload signatures where necessary before submission.
+</p>
+
+<p  style="font-size:14px;color:#475569;">Provide a court token to download your document</p>
+
+<p  style="font-size:14px;color:#475569;">
+To get a Court Token chat with the Court registra on the chat button make payment and provide a clear image or pdf of your payment receipt
+</p>
+
+</div>
+
+</div>
+
+
+    
+<script>
+const docs = {
+
+affidavit:
+{ fee:"$180",fields:[
+    {label:"Affiant Full Legal Name"},
+    {label:"Date of Birth",type:"date"},
+    {label:"Address"},
+    {label:"City"},
+    {label:"State"},
+    {label:"Zip Code"},
+    {label:"Phone Number"},
+    {label:"Email Address"},
+    {label:"Type of Affidavit",type:"select","options":["General Affidavit","Affidavit of Identity","Affidavit of Residence","Affidavit of Support","Financial Affidavit"]},
+    {label:"Affidavit Statement",type:"textarea"},
+    {label:"Supporting Facts",type:"textarea"},
+    {label:"Exhibits/Attachments Description",type:"textarea"},
+    {label:"State of Execution"},
+    {label:"County of Execution"},
+    {label:"Date of Signing",type:"date"},
+    {label:"Notary Required?",type:"select","options":["Yes","No"]},
+    {label:"Upload Supporting Documents",type:"file"},
+    {label:"Affiant Signature",type:"file"},
+    {label:"Notary Seal/Stamp",type:"file"}
+  ]
+},    
+
+name:
+{fee:"$150",fields:[
+{label:"Current Legal Name"},
+{label:"New Legal Name"},
+{label:"Reason for Name Change",type:"textarea"},
+{label:"Date of Birth",type:"date"},
+{label:"Place of Birth (City, State)"},
+{label:"Social Security Number (Last 4 digits)"},
+{label:"Current Address"},
+{label:"State of Filing"},
+{label:"Upload Government ID",type:"file"},
+{label:"Upload Supporting Documents",type:"file"},
+{label:"Applicant Signature",type:"file"}
+]},
+
+age:{fee:"$120",fields:[
+{label:"Full Legal Name"},
+{label:"Date of Birth",type:"date"},
+{label:"Place of Birth"},
+{label:"Parent/Guardian Name"},
+{label:"Affidavit Statement",type:"textarea"},
+{label:"State of Filing"},
+{label:"Upload Supporting Documents",type:"file"},
+{label:"Signature",type:"file"}
+]},
+
+stamp:{fee:"$50",fields:[
+{label:"Document Title"},
+{label:"Purpose (e.g., Certified Filing, Court Use)"},
+{label:"Number of Copies",type:"number"},
+{label:"Jurisdiction (State/County)"},
+{label:"Upload Document",type:"file"}
+]},
+
+agreement:{fee:"$300",fields:[
+{label:"Agreement Title"},
+{label:"Party A (Full Name/Company)"},
+{label:"Party A Address"},
+{label:"Party B (Full Name/Company)"},
+{label:"Party B Address"},
+{label:"Agreement Terms",type:"textarea"},
+{label:"Payment Terms",type:"textarea"},
+{label:"Effective Date",type:"date"},
+{label:"Termination Date",type:"date"},
+{label:"Governing State Law"},
+{label:"Witness 1"},
+{label:"Witness 2"},
+{label:"Signatures",type:"file"}
+]},
+
+contract:{fee:"$350",fields:[
+{label:"Contract Title"},
+{label:"Parties Involved"},
+{label:"Scope of Work",type:"textarea"},
+{label:"Contract Duration"},
+{label:"Obligations of Parties",type:"textarea"},
+{label:"Termination Clause",type:"textarea"},
+{label:"Dispute Resolution Clause",type:"textarea"},
+{label:"Governing Law (State)"},
+{label:"Signatures",type:"file"}
+]},
+
+order:{fee:"$250",fields:[
+{label:"Case Number"},
+{label:"Court Name"},
+{label:"County"},
+{label:"State"},
+{label:"Type of Order"},
+{label:"Order Details",type:"textarea"},
+{label:"Filing Date",type:"date"},
+{label:"Upload Supporting Documents",type:"file"}
+]},
+
+marriage:{fee:"$200",fields:[
+{label:"Spouse 1 Full Name"},
+{label:"Spouse 2 Full Name"},
+{label:"Marriage Date",type:"date"},
+{label:"County of Marriage"},
+{label:"State of Marriage"},
+{label:"Marriage Type",type:"select",options:["Civil","Religious"]},
+{label:"Witness 1"},
+{label:"Witness 2"},
+{label:"Upload Marriage Certificate",type:"file"},
+{label:"Signatures",type:"file"}
+]},
+
+loss:{fee:"$150",fields:[
+{label:"Full Name"},
+{label:"Lost Document Type"},
+{label:"Date Lost",type:"date"},
+{label:"Location Lost"},
+{label:"Description of Circumstances",type:"textarea"},
+{label:"State"},
+{label:"Upload ID",type:"file"},
+{label:"Signature",type:"file"}
+]},
+
+police:{fee:"$120",fields:[
+{label:"Full Name"},
+{label:"Address"},
+{label:"Purpose of Request"},
+{label:"Police Department"},
+{label:"Incident Details",type:"textarea"},
+{label:"Upload ID",type:"file"}
+]},
+
+business:{fee:"$400",fields:[
+{label:"Business Name"},
+{label:"Entity Type",type:"select",options:["LLC","Corporation","Partnership","Sole Proprietorship"]},
+{label:"State of Registration"},
+{label:"Business Address"},
+{label:"Owner/Member Name"},
+{label:"EIN (if available)"},
+{label:"Phone"},
+{label:"Email"},
+{label:"Business Purpose",type:"textarea"},
+{label:"Upload ID",type:"file"},
+{label:"Signature",type:"file"}
+]},
+
+tenancy:{fee:"$250",fields:[
+{label:"Landlord Name"},
+{label:"Tenant Name"},
+{label:"Property Address"},
+{label:"Monthly Rent ($)",type:"number"},
+{label:"Lease Duration (Months)",type:"number"},
+{label:"Start Date",type:"date"},
+{label:"Security Deposit ($)",type:"number"},
+{label:"Lease Terms",type:"textarea"},
+{label:"Signatures",type:"file"}
+]},
+
+divorce:{fee:"$800",fields:[
+{label:"Petitioner Name"},
+{label:"Respondent Name"},
+{label:"Marriage Date",type:"date"},
+{label:"State of Filing"},
+{label:"Grounds for Divorce",type:"textarea"},
+{label:"Children Information",type:"textarea"},
+{label:"Relief Requested",type:"textarea"},
+{label:"Upload Marriage Certificate",type:"file"},
+{label:"Signature",type:"file"}
+]},
+
+custody:{fee:"$600",fields:[
+{label:"Petitioner Name"},
+{label:"Child Name"},
+{label:"Child Date of Birth",type:"date"},
+{label:"Current Custodian"},
+{label:"Requested Custody Type"},
+{label:"Reason",type:"textarea"},
+{label:"Court (State/County)"},
+{label:"Signature",type:"file"}
+]},
+
+power:{fee:"$250",fields:[
+{label:"Principal Name"},
+{label:"Agent (Attorney-in-Fact)"},
+{label:"Scope of Authority",type:"textarea"},
+{label:"Effective Date",type:"date"},
+{label:"Expiration Date",type:"date"},
+{label:"State"},
+{label:"Notary Required?",type:"select",options:["Yes","No"]},
+{label:"Signatures",type:"file"}
+]},
+
+will:{fee:"$500",fields:[
+{label:"Testator Name"},
+{label:"Address"},
+{label:"List of Assets",type:"textarea"},
+{label:"Beneficiaries",type:"textarea"},
+{label:"Executor Name"},
+{label:"Special Instructions",type:"textarea"},
+{label:"State"},
+{label:"Signature",type:"file"}
+]},
+
+probate:{fee:"$700",fields:[
+{label:"Decedent Name"},
+{label:"Date of Death",type:"date"},
+{label:"Executor"},
+{label:"State"},
+{label:"Assets",type:"textarea"},
+{label:"Beneficiaries",type:"textarea"},
+{label:"Upload Death Certificate",type:"file"},
+{label:"Signature",type:"file"}
+]},
+
+land:{fee:"$900",fields:[
+{label:"Owner Name"},
+{label:"Property Address"},
+{label:"County"},
+{label:"State"},
+{label:"Parcel Number"},
+{label:"Title Type"},
+{label:"Upload Documents",type:"file"},
+{label:"Signature",type:"file"}
+]},
+
+deed:{fee:"$750",fields:[
+{label:"Grantor (Seller)"},
+{label:"Grantee (Buyer)"},
+{label:"Property Address"},
+{label:"County"},
+{label:"State"},
+{label:"Sale Price ($)",type:"number"},
+{label:"Legal Description",type:"textarea"},
+{label:"Upload Documents",type:"file"},
+{label:"Signatures",type:"file"}
+]},
+
+partnership:{fee:"$400",fields:[
+{label:"Partners Names"},
+{label:"Business Name"},
+{label:"State"},
+{label:"Roles & Responsibilities",type:"textarea"},
+{label:"Profit Sharing Ratio"},
+{label:"Duration"},
+{label:"Signatures",type:"file"}
+]},
+
+nda:{fee:"$300",fields:[
+{label:"Disclosing Party"},
+{label:"Receiving Party"},
+{label:"Purpose"},
+{label:"Confidential Information",type:"textarea"},
+{label:"Term Duration"},
+{label:"Governing State Law"},
+{label:"Signatures",type:"file"}
+]},
+
+loan:{fee:"$350",fields:[
+{label:"Lender"},
+{label:"Borrower"},
+{label:"Loan Amount ($)",type:"number"},
+{label:"Interest Rate (%)",type:"number"},
+{label:"Repayment Terms",type:"textarea"},
+{label:"Collateral (if any)",type:"textarea"},
+{label:"State"},
+{label:"Signatures",type:"file"}
+]},
+
+employment:{fee:"$350",fields:[
+{label:"Employer"},
+{label:"Employee"},
+{label:"Position"},
+{label:"Salary ($)",type:"number"},
+{label:"Start Date",type:"date"},
+{label:"Employment Type",type:"select",options:["Full-Time","Part-Time","Contract"]},
+{label:"Terms",type:"textarea"},
+{label:"State"},
+{label:"Signatures",type:"file"}
+]},
+
+termination:{fee:"$150",fields:[
+{label:"Employee"},
+{label:"Employer"},
+{label:"Termination Date",type:"date"},
+{label:"Reason",type:"textarea"},
+{label:"Final Pay ($)",type:"number"},
+{label:"State"},
+{label:"Signature",type:"file"}
+]},
+
+immigration:{fee:"$600",fields:[
+{label:"Full Name"},
+{label:"Date of Birth",type:"date"},
+{label:"Country of Citizenship"},
+{label:"Passport Number"},
+{label:"Visa Type"},
+{label:"Purpose"},
+{label:"US Entry Date",type:"date"},
+{label:"Upload Passport",type:"file"},
+{label:"Signature",type:"file"}
+]},
+
+tax:{fee:"$250",fields:[
+{label:"Individual/Business Name"},
+{label:"SSN/EIN"},
+{label:"Tax Year"},
+{label:"Income Details",type:"textarea"},
+{label:"Tax Paid ($)",type:"number"},
+{label:"State"},
+{label:"Upload Evidence",type:"file"}
+]},
+
+compliance:{fee:"$300",fields:[
+{label:"Company Name"},
+{label:"EIN"},
+{label:"State"},
+{label:"Compliance Type"},
+{label:"Details",type:"textarea"},
+{label:"Upload Documents",type:"file"}
+]},
+
+notary:{fee:"$75",fields:[
+{label:"Full Name"},
+{label:"State"},
+{label:"Document Type"},
+{label:"Purpose"},
+{label:"Upload Document",type:"file"},
+{label:"Government ID",type:"file"},
+{label:"Signature",type:"file"}
+]},
+
+certified:{fee:"$60",fields:[
+{label:"Document Name"},
+{label:"Owner Name"},
+{label:"Purpose"},
+{label:"Number of Copies",type:"number"},
+{label:"State"},
+{label:"Upload Original Document",type:"file"}
+]},
+
+appeal:{fee:"$900",fields:[
+{label:"Appellant"},
+{label:"Respondent"},
+{label:"Case Number"},
+{label:"Court Name"},
+{label:"State"},
+{label:"Grounds for Appeal",type:"textarea"},
+{label:"Relief Sought",type:"textarea"},
+{label:"Upload Judgment",type:"file"},
+{label:"Signature",type:"file"}
+]}
+
+};
+</script>
+
+<script>
+
+function selectDoc(type, el){
+const data = docs[type] || docs['affidavit'];
+
+document.getElementById('docTitle').innerText = type.toUpperCase();
+document.getElementById('docFee').innerText = "Legal Fee: " + data.fee;
+
+const container = document.getElementById('formFields');
+
+container.innerHTML = data.fields.map(f=>{
+if(f.type === "textarea") return `<textarea placeholder="${f.label}"></textarea>`;
+if(f.type === "file") return `<label>${f.label}</label><input type="file">`;
+if(f.type === "date") return `<input type="date" placeholder="${f.label}">`;
+if(f.type === "number") return `<input type="number" placeholder="${f.label}">`;
+if(f.type === "select") return `
+<select>
+<option>${f.label}</option>
+${f.options.map(o=>`<option>${o}</option>`).join('')}
+</select>`;
+return `<input type="text" placeholder="${f.label}">`;
+}).join('');
+
+if(el){
+document.querySelectorAll('.menu li').forEach(li=>li.classList.remove('active'));
+el.classList.add('active');
+}
+}
+
+selectDoc('affidavit');
+</script>
+<script src="nav.js"></Script>
+</body>
+</html>

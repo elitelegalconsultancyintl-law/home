@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Legal Consultancy | Trusted Legal Experts</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Segoe UI, sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+
+
+        /* HERO SLIDER */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: 1s;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(4, 12, 27, 0.75);
+            top: 0;
+            left: 0;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px
+        }
+
+        .hero p {
+            margin-bottom: 25px
+        }
+
+        /* SECTION */
+        section {
+            padding: 80px 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px
+        }
+
+        .section-title h3 {
+            font-size: 28px;
+            color: #0a1f44
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px)
+        }
+
+        /* STATS */
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+            background: #0a1f44;
+            color: #fff
+        }
+
+        .stats div {
+            margin: 20px
+        }
+
+        .stats h2 {
+            font-size: 32px
+        }
+
+        /* TESTIMONIAL SCROLL */
+        .testimonial-wrap {
+            overflow: hidden
+        }
+
+        .testimonial-track {
+            display: flex;
+            width: max-content;
+            animation: scroll 40s linear infinite;
+        }
+
+        .testimonial {
+            background: #fff;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 6px;
+            width: 260px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            color: #f5b50a;
+            font-size: 14px
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0)
+            }
+
+            100% {
+                transform: translateX(-50%)
+            }
+        }
+
+        /* SCROLL ANIMATION */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 0.8s;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+            nav {
+                display: none
+            }
+
+            .menu-btn {
+                display: block
+            }
+
+            .hero h2 {
+                font-size: 28px
+            }
+        }
+    </style>
+
+
+
+
+    <style>
+        .attorney-card {
+            text-align: center;
+        }
+
+        .attorney-card img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 12px;
+            border: 3px solid #caa54b;
+        }
+
+        .attorney-card h4 {
+            color: #0a1f44;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .attorney-card .title {
+            font-size: 12px;
+            color: #caa54b;
+            margin-bottom: 6px;
+        }
+
+        .attorney-card small {
+            display: block;
+            color: #666;
+            margin-bottom: 6px;
+            font-size: 13px;
+        }
+
+        .attorney-card .cases {
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        .attorney-card .stars {
+            color: #f5b50a;
+            font-size: 14px;
+        }
+    </style>
+
+<style>
+.practice-section{
+  padding:80px 40px;
+  width: 100%;
+}
+
+.practice-container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  width: 100%;
+}
+
+.practice-img{
+  height:320px;              /* fixed uniform height */
+  object-fit:cover;         /* prevents stretching */
+  border-radius:8px;
+  width:450px;  
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.practice-content h3{
+  font-size:28px;
+  color:#0a1f44;
+  margin-bottom:15px;
+}
+
+.practice-content p{
+  margin-bottom:15px;
+}
+
+.practice-content ul{
+  margin-bottom:20px;
+  padding-left:20px;
+}
+
+.practice-content li{
+  margin-bottom:8px;
+}
+
+/* ALTERNATING LAYOUT
+.practice-section.alt .practice-container{
+  flex-direction:row-reverse;
+} */
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  nav{display:none}
+  .menu-btn{display:block}
+  .hero h2{font-size:28px}
+
+  .practice-container{
+    flex-direction:column !important;
+    text-align:left;
+  }
+
+  /* ALWAYS put image first on mobile */
+  .practice-section{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .practice-img{
+    width:100%;
+  }
+
+
+
+  .practice-img img{
+    height:220px; /* slightly smaller on mobile */
+    width:100%;
+  }
+}
+    </style>
+
+</head>
+
+<link rel="stylesheet" href="style.css">
+
+<body>
+
+    <div class="overlay" id="overlay"></div>
+    <header>
+        <div class="logo">
+            <img src="icons/elite_consultancy_logo.png" alt="" style="height:40px;">
+        </div>
+
+        <nav>
+            <a href="index.html" class="btn">Home</a>
+            <a href="about.html">About</a>
+            <a href="case.html">Case Filing</a>
+            <a href="registries.html">Legal Documentation</a>
+            <a href="contact.html">Contact</a>
+            <a href="consultation.html">Consultation</a>
+        </nav>
+
+        <div class="menu-btn" id="menuBtn">☰</div>    
+    </header>
+
+    <div class="drawer" id="drawer">
+        <a href="index.html" class="btn">Home</a>
+        <a href="about.html">About</a>
+        <a href="case.html">Case Filing</a>
+        <a href="registries.html">Legal Documentation</a>
+        <a href="contact.html">Contact</a>
+        <a href="consultation.html">Consultation</a>        
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f')"></div>
+        <div class="slide" style="background-image:url('images/attorneys.jpg')"></div>
+        <div class="slide" style="background-image:url('images/strong-law-team-photo.webp')"></div>
+        <div class="slide" style="background-image:url('images/court-hearing.jpg')"></div>
+        <div class="hero-content">
+            <img src="icons/elite_consultancy_logo_2.png" alt="" style="height: 150px; margin-bottom: 30px;">
+            <h2>Trusted Legal Representation</h2>
+            <p>Expert legal solutions with proven results and unmatched professionalism.</p>
+            <a href="consultation.html" class="btn">Get Legal Help</a>
+        </div>
+    </section>
+
+<!-- PRACTICE AREAS -->
+
+<!-- CRIMINAL LAW -->
+<section class="reveal practice-section">
+  <div class="practice-container">
+    
+    <img src="https://othmanadvocates.ae/wp-content/uploads/2026/01/criminal-defense-basics.jpg" alt="Criminal Law" class="practice-img">
+
+    <div class="practice-content">
+      <h3>Criminal Defense</h3>
+      <p>
+        Our criminal defense attorneys provide aggressive and strategic representation
+        to protect your rights at every stage of the legal process.
+      </p>
+
+      <ul>
+        <li>Felony & Misdemeanor Defense</li>
+        <li>White Collar Crimes</li>
+        <li>Bail & Pre-Trial Representation</li>
+        <li>Appeals & Post-Conviction Relief</li>
+      </ul>
+
+      <a href="consultation.html" class="btn">Speak to an Attorney</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CORPORATE LAW -->
+<section class="reveal practice-section alt">
+  <div class="practice-container">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuSjHUKJCEopDW35nb_bxoZf7iZMOMZ3gQ7Q&s" alt="Corporate Law" class="practice-img">
+
+    <div class="practice-content">
+      <h3>Corporate & Commercial Law</h3>
+      <p>
+        We advise businesses on legal structures, compliance, contracts,
+        and corporate governance to ensure sustainable growth.
+      </p>
+
+      <ul>
+        <li>Company Formation & Structuring</li>
+        <li>Contract Drafting & Negotiation</li>
+        <li>Mergers & Acquisitions</li>
+        <li>Regulatory Compliance</li>
+      </ul>
+
+      <a href="consultation.html" class="btn">Get Business Legal Support</a>
+    </div>
+
+
+
+  </div>
+</section>
+
+<!-- FAMILY LAW -->
+<section class="reveal practice-section">
+  <div class="practice-container">
+    
+      <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300" alt="Family Law" class="practice-img">
+
+    <div class="practice-content">
+      <h3>Family & Matrimonial Law</h3>
+      <p>
+        We provide compassionate and confidential legal support for sensitive
+        family matters, ensuring fair and just outcomes.
+      </p>
+
+      <ul>
+        <li>Divorce & Separation</li>
+        <li>Child Custody & Support</li>
+        <li>Property & Asset Division</li>
+        <li>Adoption & Guardianship</li>
+      </ul>
+
+      <a href="consultation.html" class="btn">Discuss Your Case</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- IMMIGRATION LAW -->
+<section class="reveal practice-section alt">
+  <div class="practice-container">
+
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR46jHVGe0stHcOeNf3BG6ZpiIaaouX_IYXxA&s" alt="Immigration Law" class="practice-img">
+
+    <div class="practice-content">
+      <h3>Immigration Law</h3>
+      <p>
+        Our immigration attorneys guide individuals and businesses through
+        complex immigration processes with clarity and precision.
+      </p>
+
+      <ul>
+        <li>Visa Applications & Appeals</li>
+        <li>Permanent Residency</li>
+        <li>Work Permits</li>
+        <li>Citizenship & Naturalization</li>
+      </ul>
+
+      <a href="consultation.html" class="btn">Start Your Application</a>
+    </div>
+
+
+
+  </div>
+</section>
+
+    <!-- STATS -->
+    <section class="stats reveal">
+        <div>
+            <h2>500+</h2>
+            <p>Cases Won</p>
+        </div>
+        <div>
+            <h2>98%</h2>
+            <p>Success Rate</p>
+        </div>
+        <div>
+            <h2>20+</h2>
+            <p>Years Experience</p>
+        </div>
+        <div>
+            <h2>15</h2>
+            <p>Awards Won</p>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+<!-- WHY CHOOSE US (EXPANDED PROFESSIONAL SECTIONS) -->
+<section class="reveal">
+  <div class="section-title">
+    <h3>Why Choose Us</h3>
+  </div>
+
+  <!-- 1. Expert Attorneys -->
+  <div class="practice-section">
+    <div class="practice-container">
+
+    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216" alt="Expert Attorneys" class="practice-img">
+
+      <div class="practice-content">
+        <h3>Elite Legal Representation</h3>
+        <p>
+          Our firm is composed of highly credentialed attorneys (Esq., LLM, JD) 
+          with decades of combined courtroom and advisory experience across multiple jurisdictions.
+        </p>
+
+        <ul>
+          <li>Senior Advocates of the United States & International Bar members</li>
+          <li>Multi-jurisdiction litigation experience</li>
+          <li>Specialists in complex legal disputes</li>
+          <li>Strategic courtroom advocacy</li>
+        </ul>
+
+        <a href="attorneys.html" class="btn">Meet Our Attorneys</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2. Client Focused -->
+  <div class="practice-section alt">
+    <div class="practice-container">
+
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Client Focused" class="practice-img">
+
+      <div class="practice-content">
+        <h3>Client-Centered Legal Strategy</h3>
+        <p>
+          Every case is treated with precision and personal attention. We design legal strategies 
+          based on your unique goals, risks, and long-term protection.
+        </p>
+
+        <ul>
+          <li>Personalized case evaluation</li>
+          <li>Direct attorney-client communication</li>
+          <li>Transparent legal guidance</li>
+          <li>Dedicated case management team</li>
+        </ul>
+
+        <a href="consultation.html" class="btn">Request Consultation</a>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <!-- 3. Confidentiality -->
+  <div class="practice-section">
+    <div class="practice-container">
+
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f" alt="Confidential Legal Work" class="practice-img">
+
+      <div class="practice-content">
+        <h3>Absolute Confidentiality</h3>
+        <p>
+          We operate under strict ethical and legal confidentiality standards. 
+          Your case information remains fully protected at every stage.
+        </p>
+
+        <ul>
+          <li>Attorney-client privilege protection</li>
+          <li>Secure digital case files</li>
+          <li>Encrypted communication channels</li>
+          <li>Strict internal compliance protocols</li>
+        </ul>
+
+        <a href="contact.html" class="btn">Learn About Privacy</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 4. Proven Results -->
+  <div class="practice-section alt">
+    <div class="practice-container">
+
+        <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb" alt="Court Success" class="practice-img">
+
+      <div class="practice-content">
+        <h3>Proven Legal Success</h3>
+        <p>
+          Our firm maintains a consistent record of successful verdicts, settlements, 
+          and favorable legal outcomes across civil, criminal, and corporate matters.
+        </p>
+
+        <ul>
+          <li>High success rate in litigation cases</li>
+          <li>Strong settlement negotiation record</li>
+          <li>Hundreds of cases won annually</li>
+          <li>Recognized legal excellence awards</li>
+        </ul>
+
+        <a href="practice-areas.html" class="btn">View Case Results</a>
+      </div>
+
+
+
+    </div>
+  </div>
+
+</section>
+
+    <section class="reveal">
+        <div class="section-title">
+            <h3>Meet Our Senior Attorneys</h3>
+        </div>
+
+        <div class="grid" id="attorneysGrid"></div>
+    </section>
+
+
+    <!-- TESTIMONIALS -->
+    <section class="reveal" style="padding-left: 0px; padding-right: 0px;">
+        <div class="section-title">
+            <h3>Client Testimonials</h3>
+        </div>
+
+        <div class="testimonial-wrap">
+            <div class="testimonial-track">
+
+                <!-- 15 testimonials -->
+<script>
+const testimonials = [
+{
+name:"James Carter",
+img:"men/10",
+text:"I was facing a serious fraud allegation that could have destroyed my career. Elite Legal Consultancy built a strong defense, uncovered key evidence, and the charges were completely dismissed."
+},
+{
+name:"Olivia Bennett",
+img:"women/11",
+text:"My divorce was getting complicated with custody issues. Their family law team handled everything with care and secured a fair custody agreement for my children."
+},
+{
+name:"Daniel Reed",
+img:"men/12",
+text:"Our company had a contract dispute that threatened a major partnership. They resolved it quickly and protected our business interests without going to court."
+},
+{
+name:"Sophia Turner",
+img:"women/13",
+text:"I was denied a visa multiple times. Their immigration team guided me step by step, and I finally got approval without stress."
+},
+{
+name:"Michael Hayes",
+img:"men/14",
+text:"After a wrongful termination, I didn’t know what to do. They took on my case and helped me secure a fair compensation settlement."
+},
+{
+name:"Emma Collins",
+img:"women/15",
+text:"I was involved in a personal injury case after an accident. They handled everything and ensured I received proper compensation."
+},
+{
+name:"David Brooks",
+img:"men/16",
+text:"Elite Legal Consultancy helped me navigate a complex property dispute. Their expertise ensured I retained full ownership of my property."
+},
+{
+name:"Isabella Ward",
+img:"women/17",
+text:"I needed help drafting business contracts. Their attention to detail saved me from future legal issues."
+},
+{
+name:"Ethan Price",
+img:"men/18",
+text:"I was wrongly accused in a criminal case. Their legal strategy was sharp and effective — I was cleared of all charges."
+},
+{
+name:"Mia Foster",
+img:"women/19",
+text:"They guided me through a very emotional child custody case and ensured the outcome was in the best interest of my child."
+},
+{
+name:"Lucas Gray",
+img:"men/20",
+text:"Our startup needed legal structure and compliance. They set everything up perfectly and professionally."
+},
+{
+name:"Amelia Scott",
+img:"women/21",
+text:"I had issues with tenant eviction laws. Their legal advice made the process smooth and lawful."
+},
+{
+name:"Henry Adams",
+img:"men/22",
+text:"They handled my inheritance dispute with professionalism and ensured a fair distribution."
+},
+{
+name:"Grace Mitchell",
+img:"women/23",
+text:"I needed urgent legal representation and they responded immediately. The outcome exceeded my expectations."
+},
+{
+name:"Jack Turner",
+img:"men/24",
+text:"From consultation to resolution, they were transparent, reliable, and extremely effective in handling my case."
+}
+];
+
+function renderTestimonials(){
+return testimonials.map((t,i)=>`
+<div class="testimonial">
+<img src="https://randomuser.me/api/portraits/${t.img}.jpg">
+<h4>${t.name}</h4>
+<div class="stars">★★★★★</div>
+<p>${t.text}</p>
+</div>
+`).join('');
+}
+
+// Duplicate for infinite scroll effect
+document.write(renderTestimonials() + renderTestimonials());
+</script>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta reveal" style="background:#0a1f44;color:#fff;text-align:center">
+        <h3>Need Legal Assistance?</h3>
+        <p>Speak with our experts today.</p><br>
+        <a href="consultation.html" class="btn">Book Consultation</a>
+    </section>
+
+    <footer class="footer">
+        
+        <div class="footer-grid"><img src="icons/elite_consultancy_logo_2.png" alt=""  class="footer-logo">
+            <!-- FIRM INFO -->
+            <div class="footer-col">
+                <h3>Elite Legal Consultancy</h3>
+                <p>
+                    Elite Legal Consultancy is a full-service legal practice committed to delivering
+                    strategic, results-driven legal solutions with integrity, confidentiality,
+                    and professionalism.
+                </p>
+                <p class="small">
+                    Licensed practitioners. Member of recognized Bar Associations.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="attorneys.html">Attorneys</a>
+                <a href="registries.html">Legal Documentation</a>
+                <a href="contact.html">Contact</a>
+                <a href="consultation.html">Book Consultation</a>
+            </div>
+
+            <!-- PRACTICE AREAS -->
+            <div class="footer-col">
+                <h4>Practice Areas</h4>
+                <a href="#">Criminal Law</a>
+                <a href="#">Corporate Law</a>
+                <a href="#">Family Law</a>
+                <a href="#">Immigration Law</a>
+                <a href="#">Real Estate Law</a>
+                <a href="#">Litigation</a>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                 <div style="display: flex; gap: 15px; width: 100%; align-items: center;">
+                    <img src="icons/pin.png" alt="" style="height: 14px;"> <p>11340 W Olympic Blvd,  Los Angeles, CA 90064</p>
+                 </div>
+                 <div style="display: flex; gap: 15px; width: 100%; align-items: center;">
+                    <img src="icons/whatsapp.png" alt="" style="height: 14px;"> <p>+1 (540) 236-1560</p>
+                 </div>     
+
+                 <div style="display: flex; gap: 15px; width: 100%; align-items: center;">
+                    <img src="icons/email.png" alt="" style="height: 14px;"> <p>info@elitelawfirm.com</p>
+                 </div>
+                    
+                 <div style="display: flex; gap: 15px; width: 100%; align-items: center;">
+                    <img src="icons/clock.png" alt="" style="height: 14px;"> <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                 </div>
+            </div>
+
+            <!-- NEWSLETTER -->
+            <div class="footer-col">
+                <h4>Stay Informed</h4>
+                <p>Subscribe for legal insights and updates.</p>
+                <form class="newsletter">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Elite Legal Consultancy. All Rights Reserved.</p>
+
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Legal Disclaimer</a>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        /* MOBILE MENU */
+        const menuBtn = document.getElementById("menuBtn");
+        const drawer = document.getElementById("drawer");
+        const overlay = document.getElementById("overlay");
+
+        menuBtn.onclick = () => { drawer.classList.add("active"); overlay.classList.add("active"); }
+        overlay.onclick = () => { drawer.classList.remove("active"); overlay.classList.remove("active"); }
+
+        /* HERO SLIDER */
+        let slides = document.querySelectorAll(".slide");
+        let i = 0;
+        setInterval(() => {
+            slides[i].classList.remove("active");
+            i = (i + 1) % slides.length;
+            slides[i].classList.add("active");
+        }, 4000);
+
+        /* SCROLL ANIMATION */
+        const reveals = document.querySelectorAll(".reveal");
+        window.addEventListener("scroll", () => {
+            reveals.forEach(el => {
+                let top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) { el.classList.add("active") }
+            });
+        });
+    </script>
+
+
+    <script>
+        /* ATTORNEYS DATA */
+        const attorneys = [
+            {
+                name: "John A. Anderson, Esq.",
+                title: "Senior Partner | SAN",
+                spec: "Criminal Defense",
+                bar: "Washington State Bar",
+                cases: 420,
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC4pxi7GjCtAaAM-TbDtnGldUui3vw8dS4OA&s"
+            },
+            {
+                name: "Sarah K. Mitchell, JD",
+                title: "Managing Partner",
+                spec: "Corporate & Commercial Law",
+                bar: "New York State Bar",
+                cases: 310,
+                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnDneKekZFmigz2_59pKeqAPT1oCqQFN2EBg&s",
+            },
+            {
+                name: "David O. Williams, BL",
+                title: "Partner",
+                spec: "Family & Matrimonial Law",
+                bar: "Chicago State Bar",
+                cases: 275,
+                image: "https://www.foxwilliams.com/wp-content/uploads/2024/09/David-Williams-600x580.png"
+            },
+            {
+                name: "Emily R. Johnson, LLM",
+                title: "Senior Associate",
+                spec: "Immigration Law",
+                bar: "UK Bar Council",
+                cases: 260,
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfxm0SbYRwa7JcRYGevcqh1PEFuii-tiOeGw&s",
+            },
+            {
+                name: "Michael T. Brown, Esq.",
+                title: "Partner",
+                spec: "Real Estate & Property Law",
+                bar: "California State Bar",
+                cases: 295,
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUZgEn4KsWfDlOniA00Yx1v5963TfaL3-6dQ&s"
+            },
+            {
+                name: "Olivia D. Davis, JD",
+                title: "Litigation Counsel",
+                spec: "Civil Litigation",
+                bar: "Texas State Bar",
+                cases: 350,
+                image: "https://www.ottingerlaw.com/wp-content/uploads/2025/10/OliviaDavis.webp",
+            },
+            {
+                name: "Daniel P. Wilson, LLM",
+                title: "IP Specialist",
+                spec: "Intellectual Property",
+                bar: "European Patent Bar",
+                cases: 190,
+                image: "https://cdn.blrankings.com/best-lawyers/lawyer-images/daniel-m-wilson-63923?t=2025100115113078",
+            },
+            {
+                name: "Sophia L. Taylor, Esq.",
+                title: "Senior Counsel",
+                spec: "Personal Injury",
+                bar: "Florida Bar",
+                cases: 410,
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd2PlUncSu-U-408CTJU0SOALGsHFC-UKQ9A&s",
+
+            },
+            {
+                name: "James R. Moore, CPA, JD",
+                title: "Tax Attorney",
+                spec: "Tax & Financial Law",
+                bar: "Illinois State Bar",
+                cases: 220,
+                image: "https://nysba.org/wp-content/uploads/2023/06/Moore_James_4C-Cropped.jpeg",
+            },
+            {
+                name: "Isabella M. Thomas, BL",
+                title: "Associate Partner",
+                spec: "Employment & Labor Law",
+                bar: "Dutch Bar Association",
+                cases: 305,
+                image: "https://media.licdn.com/dms/image/v2/D4E03AQE05c6vVvvrMg/profile-displayphoto-shrink_200_200/B4EZW41GrtHgAY-/0/1742562684157?e=2147483647&v=beta&t=5hTgV6nqEhKPNgn-fu2S05SKZK6BTizB4FHpFoCY5k8",
+            }
+        ];
+
+        const attorneysGrid = document.getElementById("attorneysGrid");
+
+        function getRandomRating() {
+            return Math.random() > 0.5 ? 5 : 4;
+        }
+
+        function renderStars(num) {
+            return "★".repeat(num) + "☆".repeat(5 - num);
+        }
+
+        attorneysGrid.innerHTML = attorneys.map((attorney, i) => {
+            let rating = getRandomRating();
+
+            return `
+    <div class="card attorney-card">
+      <img src="${attorney.image}" alt="Attorney">
+      <h4>${attorney.name}</h4>
+      <div class="title">${attorney.title}</div>
+      <small>${attorney.spec}</small>
+      <small>${attorney.bar}</small>
+      <div class="cases">${attorney.cases}+ Cases Won</div>
+      <div class="stars">${renderStars(rating)}</div>
+    </div>
+  `;
+        }).join(""); 
+    </script>
+
+</body>
+
+</html>

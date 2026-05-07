@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Elite Legal Consultancy</title>
+
+
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family: Arial, Helvetica, sans-serif;}
+
+    body{background:#ffffff;color:#0f172a;overflow-x:hidden;}
+
+    .hero{padding-top:140px;text-align:center;padding-bottom:80px;background:#f8fafc;}
+    .hero h1{font-size:48px;margin-bottom:20px;}
+    .hero p{max-width:900px;margin:auto;line-height:1.8;color:#475569;}
+
+    .section{padding:80px 40px;max-width:1200px;margin:auto;}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+
+    .section-title{margin-bottom:25px;}
+    .section-title h3{font-size:30px;margin-bottom:10px;}
+
+    .text p{color:#475569;line-height:1.8;margin-bottom:15px;}
+
+    .section img{width:100%;border-radius:12px;}
+
+    .case{background:#f1f5f9;padding:30px;border-radius:12px;margin-bottom:30px;}
+    .case h4{margin-bottom:10px;}
+    .case p{color:#475569;line-height:1.7;}
+
+    .reveal{opacity:0;transform:translateY(40px);transition:1s ease;}    
+    .reveal.active{opacity:1;transform:translateY(0);}    
+
+    @media(max-width:900px){.split{grid-template-columns:1fr;}}
+  </style>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div class="overlay" id="overlay"></div>
+<header>
+    <div class="logo">
+        <img src="icons/elite_consultancy_logo.png" alt="" style="height:40px;">
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="btn">About</a>
+        <a href="case.html">Case Filing</a>
+        <a href="registries.html">Legal Documentation</a>
+        <a href="contact.html">Contact</a>
+        <a href="consultation.html">Consultation</a>
+    </nav>
+
+    <div class="menu-btn" id="menuBtn">☰</div>    
+</header>
+
+    <div class="drawer" id="drawer">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="btn">About</a>
+        <a href="case.html">Case Filing</a>
+        <a href="registries.html">Legal Documentation</a>
+        <a href="contact.html">Contact</a>
+        <a href="consultation.html">Consultation</a>        
+    </div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>About Elite Legal Consultancy</h1>
+  <p>
+    Elite Legal Consultancy is a distinguished full-service law firm recognized for delivering high-level legal strategy, precision advocacy, and business-focused counsel. Our firm operates at the intersection of law, finance, and global commerce, advising corporations, institutions, and high-net-worth individuals on complex and high-stakes legal matters.
+  </p>
+</section>
+
+<!-- ORIGIN STORY -->
+<section class="section">
+  <div class="split">
+    <div class="text">
+      <div class="section-title"><h3>Foundation & Early Vision</h3></div>
+      <p>
+        Elite Legal Consultancy was established in 2004 by a consortium of senior legal practitioners who had previously held leadership positions in top-tier law firms and multinational corporations. The founding vision was clear: to create a firm that would combine the discipline of traditional legal practice with the agility and strategic foresight required in modern business environments.
+      </p>
+      <p>
+        In its early years, the firm focused on complex commercial litigation and advisory services for corporate restructuring. Within a short period, the firm gained recognition for its analytical rigor, courtroom effectiveness, and ability to resolve disputes efficiently without compromising client interests.
+      </p>
+    </div>
+    <img src="images/hammar.jpg" />
+  </div>
+</section>
+
+<!-- GROWTH -->
+<section class="section reveal">
+  <div class="split">
+    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85" />
+    <div class="text">
+      <div class="section-title"><h3>Strategic Growth & Expansion</h3></div>
+      <p>
+        Over the last two decades, the firm has evolved into a multi-disciplinary legal consultancy with capabilities spanning corporate law, energy law, financial regulation, dispute resolution, and cross-border transactions. Strategic partnerships and alliances have enabled the firm to extend its reach beyond domestic markets into international jurisdictions.
+      </p>
+      <p>
+        This expansion has been carefully managed to preserve the firm’s core values—precision, discretion, and client-focused service—while enhancing its ability to handle increasingly sophisticated legal challenges.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL PHILOSOPHY -->
+<section class="section reveal">
+  <div class="split">
+    <div class="text">
+      <div class="section-title"><h3>Legal Philosophy</h3></div>
+      <p>
+        At Elite Legal Consultancy, legal advice is never delivered in isolation. Every engagement is approached through a strategic lens that considers financial implications, regulatory exposure, and long-term business impact.
+      </p>
+      <p>
+        Our philosophy emphasizes proactive risk management, structured negotiation, and decisive litigation where necessary. This ensures that clients are not only protected but also positioned for sustainable growth.
+      </p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f" />
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="section reveal">
+  <div class="section-title"><h3>Representative Case Studies</h3></div>
+
+  <div class="case">
+    <h4>Multi-Jurisdictional Corporate Dispute</h4>
+    <p>
+      Acted as lead counsel for a consortium involved in a cross-border dispute valued at over $250 million. The case involved conflicting regulatory frameworks across three jurisdictions. Through coordinated legal strategy and arbitration proceedings, the firm secured a favorable ruling, preserving client assets and avoiding enforcement risks.
+    </p>
+  </div>
+
+  <div class="case">
+    <h4>Oil & Gas Licensing Conflict</h4>
+    <p>
+      Represented an energy company facing revocation of operational licenses due to regulatory non-compliance allegations. The firm conducted a full legal audit, identified procedural breaches by regulators, and successfully reinstated the licenses, safeguarding operations and investor confidence.
+    </p>
+  </div>
+
+  <div class="case">
+    <h4>Financial Fraud Defense</h4>
+    <p>
+      Defended a senior executive accused of financial misconduct involving complex transactional structures. Through forensic legal analysis and expert testimony coordination, the firm dismantled the claims, resulting in a complete dismissal of charges.
+    </p>
+  </div>
+</section>
+
+<!-- ADVISORY ROLE -->
+<section class="section reveal">
+  <div class="split">
+    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df" />
+    <div class="text">
+      <div class="section-title"><h3>Strategic Advisory Role</h3></div>
+      <p>
+        Beyond litigation, the firm serves as a trusted advisor to corporations and institutions. Our advisory services encompass regulatory compliance, governance structuring, transactional risk assessment, and crisis management.
+      </p>
+      <p>
+        Clients rely on our ability to anticipate legal challenges and provide forward-looking strategies that align with their operational and financial objectives.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT PROFILE -->
+<section class="section reveal">
+  <div class="split">
+    <div class="text">
+      <div class="section-title"><h3>Client Profile</h3></div>
+      <p>
+        Our clientele includes multinational corporations, financial institutions, government agencies, and private investors. Each client engagement is tailored to reflect the complexity and sensitivity of their legal needs.
+      </p>
+      <p>
+        The firm’s ability to maintain long-term relationships is rooted in consistent performance, discretion, and measurable outcomes.
+      </p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf" />
+  </div>
+</section>
+
+<!-- CULTURE -->
+<section class="section reveal">
+  <div class="split">
+    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216" />
+    <div class="text">
+      <div class="section-title"><h3>Firm Culture & Standards</h3></div>
+      <p>
+        Elite Legal Consultancy operates under a culture of excellence, accountability, and continuous learning. Legal professionals within the firm are expected to uphold the highest standards of accuracy, ethics, and professionalism.
+      </p>
+      <p>
+        Internal collaboration and knowledge-sharing ensure that every case benefits from collective expertise, rather than isolated practice.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FUTURE -->
+<section class="section reveal">
+  <div class="split">
+    <div class="text">
+      <div class="section-title"><h3>Future Outlook</h3></div>
+      <p>
+        As regulatory environments become increasingly complex and globalized, Elite Legal Consultancy is committed to expanding its capabilities through technology integration, talent development, and international collaboration.
+      </p>
+      <p>
+        The firm’s long-term objective is to remain a leading authority in high-value legal advisory and dispute resolution, consistently delivering results that define industry standards.
+      </p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf" />
+  </div>
+</section>
+
+    <footer class="footer">
+        
+        <div class="footer-grid"><img src="icons/elite_consultancy_logo_2.png" alt=""  class="footer-logo">
+            <!-- FIRM INFO -->
+            <div class="footer-col">
+                <h3>Elite Legal Consultancy</h3>
+                <p>
+                    Elite Legal Consultancy is a full-service legal practice committed to delivering
+                    strategic, results-driven legal solutions with integrity, confidentiality,
+                    and professionalism.
+                </p>
+                <p class="small">
+                    Licensed practitioners. Member of recognized Bar Associations.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="attorneys.html">Attorneys</a>
+                <a href="registries.html">Legal Documentation</a>
+                <a href="contact.html">Contact</a>
+                <a href="consultation.html">Book Consultation</a>
+            </div>
+
+            <!-- PRACTICE AREAS -->
+            <div class="footer-col">
+                <h4>Practice Areas</h4>
+                <a href="#">Criminal Law</a>
+                <a href="#">Corporate Law</a>
+                <a href="#">Family Law</a>
+                <a href="#">Immigration Law</a>
+                <a href="#">Real Estate Law</a>
+                <a href="#">Litigation</a>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                 <div style="display: flex; gap: 15px; width: 100%; align-items: center;">
+                    <img src="icons/pin.png" alt="" style="height: 14px;"> <p>11340 W Olympic Blvd,  Los Angeles, CA 90064</p>
+                 </div>
+                 <div style="display: flex; gap: 15px; width: 100%; align-items: center;">
+                    <img src="icons/whatsapp.png" alt="" style="height: 14px;"> <p>+1 (540) 236-1560</p>
+                 </div>     
+
+                 <div style="display: flex; gap: 15px; width: 100%; align-items: center;">
+                    <img src="icons/email.png" alt="" style="height: 14px;"> <p>info@elitelawfirm.com</p>
+                 </div>
+                    
+                 <div style="display: flex; gap: 15px; width: 100%; align-items: center;">
+                    <img src="icons/clock.png" alt="" style="height: 14px;"> <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                 </div>
+            </div>
+
+            <!-- NEWSLETTER -->
+            <div class="footer-col">
+                <h4>Stay Informed</h4>
+                <p>Subscribe for legal insights and updates.</p>
+                <form class="newsletter">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Elite Legal Consultancy. All Rights Reserved.</p>
+
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Legal Disclaimer</a>
+            </div>
+        </div>
+
+    </footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  function revealOnScroll(){
+    reveals.forEach(el=>{
+      if(el.getBoundingClientRect().top < window.innerHeight - 100){
+        el.classList.add('active');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealOnScroll);
+</script>
+<script src="nav.js"></Script>
+
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Filing - Elite Legal Consultancy</title>
+<link rel="stylesheet" href="style.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+
+body{background:#ffffff;color:#0f172a;}
+
+
+
+.container{margin-top:110px;padding:30px;display:grid;grid-template-columns:250px 1fr 300px;gap:20px;}
+
+/* LEFT MENU */
+.menu{border-right:1px solid #e2e8f0;padding-right:15px;}
+.menu h3{margin-bottom:15px;}
+.menu ul{list-style:none;}
+.menu li{padding:10px;border-radius:6px;cursor:pointer;margin-bottom:8px;}
+.menu li:hover{background:#f1f5f9;}
+.menu li.active{background:#0f172a;color:#fff;}
+
+/* CENTER FORM */
+.form-section{padding:0 20px;}
+.form-section h2{margin-bottom:20px;}
+
+textarea,input,select{
+width:100%;padding:12px;border:1px solid #cbd5f5;border-radius:6px;margin-bottom:15px;
+}
+
+textarea{min-height:150px;resize:vertical;}
+
+.checkbox-group{margin-bottom:15px;}
+
+.checkbox-group label{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  cursor:pointer;
+}
+
+.checkbox-group input[type="checkbox"]{
+  width:16px;
+  height:16px;
+  accent-color:#0f172a; /* matches your theme */
+  cursor:pointer;
+}
+
+button{
+padding:12px 20px;background:#0f172a;color:#fff;border:none;border-radius:6px;cursor:pointer;
+}
+
+/* RIGHT SEARCH */
+.search-box{border-left:1px solid #e2e8f0;padding-left:15px;}
+.search-box h3{margin-bottom:10px;}
+.search-input{display:flex;gap:10px;}
+.search-input input{flex:1;}
+
+/* MOBILE */
+.mobile-category{display:none;margin-bottom:15px;}
+
+@media(max-width:900px){
+  .container{grid-template-columns:1fr;}
+  .menu{display:none;}
+  .search-box{border:none;padding:0;margin-top:30px;}
+  .mobile-category{display:block;}
+}
+</style>
+</head>
+<body>
+
+    <div class="overlay" id="overlay"></div>
+<header>
+    <div class="logo">
+        <img src="icons/elite_consultancy_logo.png" alt="" style="height:40px;">
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="case.html" class="btn">Case Filing</a>
+        <a href="registries.html">Legal Documentation</a>
+        <a href="contact.html">Contact</a>
+        <a href="consultation.html">Consultation</a>
+    </nav>
+
+    <div class="menu-btn" id="menuBtn">☰</div>    
+</header>
+
+    <div class="drawer" id="drawer">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="case.html" class="btn">Case Filing</a>
+        <a href="registries.html">Legal Documentation</a>
+        <a href="contact.html">Contact</a>
+        <a href="consultation.html">Consultation</a>        
+    </div>
+
+<div class="container">
+
+<!-- LEFT CATEGORY MENU -->
+<div class="menu" id="menu">
+  <h3>Case Categories</h3>
+  <ul>
+    <li class="active" onclick="selectCategory('corporate')">Corporate Law</li>
+    <li onclick="selectCategory('criminal')">Criminal Law</li>
+    <li onclick="selectCategory('family')">Family Law</li>
+    <li onclick="selectCategory('property')">Property Law</li>
+    <li onclick="selectCategory('employment')">Employment Law</li>
+    <li onclick="selectCategory('immigration')">Immigration Law</li>
+    <li onclick="selectCategory('tax')">Tax Law</li>
+    <li onclick="selectCategory('ip')">Intellectual Property</li>
+    <li onclick="selectCategory('commercial')">Commercial Litigation</li>
+    <li onclick="selectCategory('energy')">Energy & Oil Law</li>
+  </ul>
+</div>
+
+<!-- CENTER FORM -->
+<div class="form-section">
+
+  <h2>File a New Case</h2>
+
+  <!-- MOBILE CATEGORY -->
+  <select class="mobile-category" onchange="selectCategory(this.value)">
+    <option value="corporate">Corporate Law</option>
+    <option value="criminal">Criminal Law</option>
+    <option value="family">Family Law</option>
+    <option value="property">Property Law</option>
+    <option value="employment">Employment Law</option>
+    <option value="immigration">Immigration Law</option>
+    <option value="tax">Tax Law</option>
+    <option value="ip">Intellectual Property</option>
+    <option value="commercial">Commercial Litigation</option>
+    <option value="energy">Energy & Oil Law</option>
+  </select>
+
+  <input type="text" placeholder="Full Name">
+  <input type="email" placeholder="Email Address">
+  <input type="tel" placeholder="Phone Number">
+
+  <textarea placeholder="Describe your case in detail..."></textarea>
+
+  <div id="dynamicFields"></div>
+
+  <button>Submit Case</button>
+
+</div>
+
+<!-- RIGHT SEARCH -->
+<div class="search-box">
+  <h3>Existing Case?</h3>
+  <p style="font-size:14px;color:#64748b;margin-bottom:10px;">
+    Enter your case number to retrieve updates, documents, or status.
+  </p>
+  <div class="search-input">
+    <input type="text" placeholder="Enter Case Number">
+    <button>Search</button>
+  </div>
+</div>
+
+</div>
+
+    <footer class="footer">
+        
+        <div class="footer-grid"><img src="icons/elite_consultancy_logo_2.png" alt=""  class="footer-logo">
+            <!-- FIRM INFO -->
+            <div class="footer-col">
+                <h3>Elite Legal Consultancy</h3>
+                <p>
+                    Elite Legal Consultancy is a full-service legal practice committed to delivering
+                    strategic, results-driven legal solutions with integrity, confidentiality,
+                    and professionalism.
+                </p>
+                <p class="small">
+                    Licensed practitioners. Member of recognized Bar Associations.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="attorneys.html">Attorneys</a>
+                <a href="registries.html">Legal Documentation</a>
+                <a href="contact.html">Contact</a>
+                <a href="consultation.html">Book Consultation</a>
+            </div>
+
+            <!-- PRACTICE AREAS -->
+            <div class="footer-col">
+                <h4>Practice Areas</h4>
+                <a href="#">Criminal Law</a>
+                <a href="#">Corporate Law</a>
+                <a href="#">Family Law</a>
+                <a href="#">Immigration Law</a>
+                <a href="#">Real Estate Law</a>
+                <a href="#">Litigation</a>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                 <div style="display: flex; gap: 15px; width: 100%; align-items: center;">
+                    <img src="icons/pin.png" alt="" style="height: 14px;"> <p>11340 W Olympic Blvd,  Los Angeles, CA 90064</p>
+                 </div>
+                 <div style="display: flex; gap: 15px; width: 100%; align-items: center;">
+                    <img src="icons/whatsapp.png" alt="" style="height: 14px;"> <p>+1 (540) 236-1560</p>
+                 </div>     
+
+                 <div style="display: flex; gap: 15px; width: 100%; align-items: center;">
+                    <img src="icons/email.png" alt="" style="height: 14px;"> <p>info@elitelawfirm.com</p>
+                 </div>
+                    
+                 <div style="display: flex; gap: 15px; width: 100%; align-items: center;">
+                    <img src="icons/clock.png" alt="" style="height: 14px;"> <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                 </div>
+            </div>
+
+            <!-- NEWSLETTER -->
+            <div class="footer-col">
+                <h4>Stay Informed</h4>
+                <p>Subscribe for legal insights and updates.</p>
+                <form class="newsletter">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Elite Legal Consultancy. All Rights Reserved.</p>
+
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Legal Disclaimer</a>
+            </div>
+        </div>
+
+    </footer>
+
+<script>
+const fields = {
+  corporate:["Mergers & Acquisition","Shareholder Dispute","Compliance Issue"],
+  criminal:["Fraud","Assault","Cybercrime"],
+  family:["Divorce","Child Custody","Inheritance"],
+  property:["Land Dispute","Lease Agreement","Property Fraud"],
+  employment:["Wrongful Termination","Workplace Harassment","Contract Dispute"],
+  immigration:["Visa Application","Deportation","Citizenship"],
+  tax:["Tax Evasion","Audit Issues","Corporate Tax"],
+  ip:["Trademark","Patent","Copyright"],
+  commercial:["Contract Breach","Business Dispute","Debt Recovery"],
+  energy:["Oil Licensing","Regulatory Compliance","Environmental Claims"]
+};
+
+function selectCategory(cat){
+  const container = document.getElementById('dynamicFields');
+  container.innerHTML = '<div class="checkbox-group">'+
+    fields[cat].map(item=>`<label><input type="checkbox"> ${item}</label>`).join('')+
+    '</div>';
+
+  document.querySelectorAll('.menu li').forEach(li=>li.classList.remove('active'));
+  event?.target?.classList.add('active');
+}
+
+selectCategory('corporate');
+</script>
+
+<script src="nav.js"></Script>
+
+</body>
+</html>
